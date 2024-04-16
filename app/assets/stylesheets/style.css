@@ -58,7 +58,7 @@
   position: absolute;
   top: 50%; /* 画像の中央にオーバーレイを配置 */
   left: 50%; /* 画像の中央にオーバーレイを配置 */
-  transform: translate(-90%, -50%); /* オーバーレイを中央に配置 */
+  transform: translate(-70%, -50%); /* オーバーレイを中央に配置 */
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   text-align: center;
@@ -79,8 +79,9 @@
   display: inline-block;
   width: 100%; 
   height: auto; 
-  opacity: 0.5;
+  opacity: 0.5; 
 }
+
 
 .map img {
   width: 80vw;
@@ -182,28 +183,31 @@
 ********************************************************/
 
 .post-form {
-  width: 600px; /* 投稿フォームの幅を固定 */
+  display: flex;
+  flex-wrap: wrap; /* 要素が折り返されるようにする */
+  width: 50vw; /* 投稿フォームの幅を固定 */
   margin: 0 auto; /* 水平方向に中央に配置 */
-  height: 600px; /* フォームの高さを設定 */
+  height: 45vh; /* フォームの高さを設定 */
   overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
+  max-height: 80%;
 }
 
 .post-form .title {
-  font-size: 20px; /* 各投稿の間隔を調整 */
+  font-size: 30px; /* 各投稿の間隔を調整 */
 }
 
 .post-form .tweet {
-  margin-bottom: 20px; /* 各投稿の間隔を調整 */
+  margin-bottom: 30px; /* 各投稿の間隔を調整 */
 }
 
 .post-form .submit-button {
   position: absolute; /* 投稿ボタンの位置を絶対位置に設定 */
-  bottom: 10px; /* 下側からの位置を調整 */
+  bottom: 30px; /* 下側からの位置を調整 */
 }
 
-div.tweet .post-image {
-  width: 300px; /* 固定したい幅を指定 */
-  height: auto; /* 幅に合わせて自動的に高さを調整 */
+div.tweet .post-image {  /* 投稿した画像のサイズ */
+  width: 40vw; 
+  height: auto; 
 }
 
 .tweets-container {
@@ -213,7 +217,7 @@ div.tweet .post-image {
 }
 
 .tweet {
-  margin-bottom: 20px; /* 各投稿の間隔を調整 */
+  margin-bottom: 10vh; /* 各投稿の間隔を調整 */
 }
 
 /******************************************************** 
@@ -223,3 +227,18 @@ div.tweet .post-image {
   max-width: 100%; /* 画像の幅を100%に設定 */
   height: auto; /* 幅に合わせて自動的に高さを調整 */
 }
+
+.form-item {
+  width: calc(33.333% - 20px); /* 幅を計算して設定し、20px は間隔を考慮した余白 */
+  margin-bottom: 10px; /* 各項目の下に余白を追加 */
+  text-align: left; /* 左寄せに設定 */
+}
+
+.form-item label {
+  margin: 0; /* ラベルのデフォルトのマージンを除去 */
+}
+
+.posted-image-container {
+  opacity: 1; /* 不透明に設定 */
+}
+

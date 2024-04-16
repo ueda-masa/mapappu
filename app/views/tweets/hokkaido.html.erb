@@ -10,28 +10,40 @@
 
     <div class="map">
       <div class="map-city">
-      <img src="/assets/hottkaido.jpg" alt="Map Image">
+        <img src="/assets/hottkaido.jpg" alt="Map Image">
+      </div>
         <div class="map-overlay">
           <h1>北海道への投稿</h1>
           <!-- 投稿フォーム -->
+
           <div class="post-form">
             <%= form_with(model: Tweet.new, url: hokkaido_tweets_path, local: true) do |form| %>
               <%= form.hidden_field :region, value: "hokkaido" %>
-              <%= form.label :title, "タイトル" %>
-              <%= form.text_field :title %>
-              <%= form.label :image, "画像" %>
-              <%= form.file_field :image %>
-              <%= form.label :introduction, "紹介文" %>
-              <%= form.text_area :introduction %>
-              <%= form.submit "投稿" %>
+
+              <div class="form-item">
+                <%= form.label :title, "タイトル" %>
+                <%= form.text_field :title %>
+              </div>
+              <div class="form-item">
+                 <%= form.label :image, "画像" %>
+                <%= form.file_field :image %>
+              </div>
+              <div class="form-item">
+                <%= form.label :introduction, "紹介文" %>
+                <%= form.text_area :introduction %>
+              </div>
+                <%= form.submit "投稿" %>
             <% end %>
+          
 
             <div class="tweets-container">
               <% @tweets.reverse_each do |tweet| %>
                 <div class="tweet">
                   <h3><%= tweet.title %></h3>
                   <% if tweet.image.attached? %>
-                    <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                    <div class="posted-image-container">
+                      <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                    </div>
                   <% end %>
                   <p><%= tweet.introduction %></p>
                 </div>
@@ -39,7 +51,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
   </body>
 </html>
