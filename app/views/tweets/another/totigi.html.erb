@@ -1,17 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
-    <title>Mapappu</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <meta charset="UTF-8">
+    <title>  みんなの旅行情報アプリ</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
   </head>
-
   <body>
-        <!-- ヘッダー -->
+    <!-- ヘッダー -->
     <header class="header">
       <div class="heading">
         <h1 class="logo"><a href="index.html">みんなの旅行情報</a></h1>
@@ -23,7 +19,14 @@
         </ul>
       </div>
     </header>
-    <%= yield %>
+
+    <!-- トップページのメイン -->
+    <div class="map">
+      <div class="map-city">
+      <img src="image/totigi.jpg" alt="Map Image">
+      </div>
+    </div>
+
     <!-- フッター -->
     <footer class="footer">
       <div class="copyright"> ~ Everyone's travel information app 2024 ~ </div>

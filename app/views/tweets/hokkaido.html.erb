@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>みんなの旅行情報アプリ - 北海道</title>
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+
+    <div class="map">
+      <div class="map-city">
+      <img src="/assets/hottkaido.jpg" alt="Map Image">
+        <div class="map-overlay">
+          <h1>北海道への投稿</h1>
+          <!-- 投稿フォーム -->
+          <div class="post-form">
+            <%= form_with(model: Tweet.new, url: hokkaido_tweets_path, local: true) do |form| %>
+              <%= form.hidden_field :region, value: "hokkaido" %>
+              <%= form.label :title, "タイトル" %>
+              <%= form.text_field :title %>
+              <%= form.label :image, "画像" %>
+              <%= form.file_field :image %>
+              <%= form.label :introduction, "紹介文" %>
+              <%= form.text_area :introduction %>
+              <%= form.submit "投稿" %>
+            <% end %>
+
+            <div class="tweets-container">
+              <% @tweets.reverse_each do |tweet| %>
+                <div class="tweet">
+                  <h3><%= tweet.title %></h3>
+                  <% if tweet.image.attached? %>
+                    <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                  <% end %>
+                  <p><%= tweet.introduction %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

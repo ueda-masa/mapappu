@@ -1,0 +1,225 @@
+
+/******************************************************** 
+　ヘッダー
+********************************************************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  height: 10vh;
+
+  background-color: #DBDBDB;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+.navbar{
+  padding: 0 1% 0 0;
+}
+
+.header a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.logo {
+  font-size: 2vw;
+  text-decoration: underline;
+  padding-left: 2vw; 
+}
+
+.nav-lists {
+  font-size: 2vw;
+  display: flex;
+  list-style: none;
+}
+
+.nav-lists__list {
+  margin-left: 70px;
+  font-size:  1.5vw;
+  font-weight: 600;
+  line-height: 100px;  
+}
+
+/******************************************************** 
+　トップページ のメイン
+********************************************************/
+.map {
+  position: relative;
+  display: inline-block;
+  width: 100%; 
+  height: auto; 
+}
+
+.map-overlay {
+  position: absolute;
+  top: 50%; /* 画像の中央にオーバーレイを配置 */
+  left: 50%; /* 画像の中央にオーバーレイを配置 */
+  transform: translate(-90%, -50%); /* オーバーレイを中央に配置 */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+.map-overlay h1 {
+  margin-bottom: 20px;
+}
+
+.map-itiran {
+  position: relative;
+  width: 100%; 
+  height: auto; 
+}
+
+.map-city {
+  position: relative;
+  display: inline-block;
+  width: 100%; 
+  height: auto; 
+  opacity: 0.5;
+}
+
+.map img {
+  width: 80vw;
+  height: 80vh;
+  max-height: 100%; 
+}
+
+.text {
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_hokkaido {
+  position: absolute;
+  top: 20%;  
+  left: 67%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_tokyo {
+  position: absolute;
+  top: 63%;  
+  left: 63%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_totigi {
+  position: absolute;
+  top: 55%;  
+  left: 65%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_kyoto {
+  position: absolute;
+  top: 53%;  
+  left: 45%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_oosaka {
+  position: absolute;
+  top: 58%;  
+  left: 40%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_fukuyama {
+  position: absolute;
+  top: 58%; 
+  left: 30%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_hirosima {
+  position: absolute;
+  top: 58%; 
+  left: 25%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+.text_fukuoka {
+  position: absolute;
+  top: 72%;  
+  left: 12%; 
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+/******************************************************** 
+　フッター
+********************************************************/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 5vh;
+
+}
+
+.copyright {
+  font-size: 2vw;
+  color: #444343;
+}
+
+
+
+
+/******************************************************** 
+　投稿
+********************************************************/
+
+.post-form {
+  width: 600px; /* 投稿フォームの幅を固定 */
+  margin: 0 auto; /* 水平方向に中央に配置 */
+  height: 600px; /* フォームの高さを設定 */
+  overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
+}
+
+.post-form .title {
+  font-size: 20px; /* 各投稿の間隔を調整 */
+}
+
+.post-form .tweet {
+  margin-bottom: 20px; /* 各投稿の間隔を調整 */
+}
+
+.post-form .submit-button {
+  position: absolute; /* 投稿ボタンの位置を絶対位置に設定 */
+  bottom: 10px; /* 下側からの位置を調整 */
+}
+
+div.tweet .post-image {
+  width: 300px; /* 固定したい幅を指定 */
+  height: auto; /* 幅に合わせて自動的に高さを調整 */
+}
+
+.tweets-container {
+  display: flex;
+  flex-direction: column-reverse; /* フレックスボックスを逆に配置 */
+  align-items: center; /* 中央揃え */
+}
+
+.tweet {
+  margin-bottom: 20px; /* 各投稿の間隔を調整 */
+}
+
+/******************************************************** 
+　投稿画像のサイズ
+********************************************************/
+.post-image {
+  max-width: 100%; /* 画像の幅を100%に設定 */
+  height: auto; /* 幅に合わせて自動的に高さを調整 */
+}
