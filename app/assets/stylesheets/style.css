@@ -38,10 +38,19 @@
 }
 
 .nav-lists__list {
-  margin-left: 70px;
+  margin-left: 2vw; /* 余白を固定値に変更 */
   font-size:  1.5vw;
   font-weight: 600;
   line-height: 100px;  
+}
+
+.grid-6 {
+  display: flex;
+  align-items: center;
+}
+
+.post {
+  margin-left: 2vw; /* ボタン間の余白を調整 */
 }
 
 /******************************************************** 

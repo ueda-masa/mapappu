@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'tweets#index'
   resources :tweets
 
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/itiran', to: 'tweets#itiran', as: 'itiran'
 
-  get '/seisaku', to: 'pages#seisaku', as: 'seisaku'
 
 
 

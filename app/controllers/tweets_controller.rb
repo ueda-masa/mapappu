@@ -38,13 +38,7 @@ class TweetsController < ApplicationController
     render 'itiran' # ビューをレンダリングする
   end
 
-  def seisaku
-    send_file(
-      "#{Rails.root}/path/to/要件定義シート.pdf",
-      filename: "要件定義シート.pdf",
-      type: "application/pdf"
-    )
-  end
+
 
   def hokkaido
     @tweets = Tweet.where(region: 'hokkaido')
