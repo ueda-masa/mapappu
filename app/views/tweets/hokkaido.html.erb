@@ -45,7 +45,7 @@
                       <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
                     </div>
                   <% end %>
-                  <p><%= tweet.introduction %></p>
+                  <h3><%= tweet.title %></h3> <!-- 画像の下にタイトルを表示 -->
                 </div>
               <% end %>
             </div>
