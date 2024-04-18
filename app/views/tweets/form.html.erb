@@ -1,0 +1,17 @@
+<%= form_with(model: @tweet, url: hokkaido_tweets_path, local: true) do |form| %>
+  <%= form.hidden_field :region, value: "hokkaido" %>
+
+  <div class="form-item">
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="form-item">
+    <%= form.label :image, "画像" %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="form-item">
+    <%= form.label :introduction, "紹介文" %>
+    <%= form.text_area :introduction %>
+  </div>
+  <%= form.submit "投稿" %>
+<% end %>

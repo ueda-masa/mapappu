@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_16_030923) do
   end
 
   create_table "tweets", charset: "utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "text"
+    t.string "title"
+    t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "region"

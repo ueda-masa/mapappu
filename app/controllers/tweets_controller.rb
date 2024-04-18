@@ -25,13 +25,25 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy
-    redirect_to root_path
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    redirect_to root_path, notice: 'Tweet was successfully destroyed.'
   end
 
   def edit
     @tweet = Tweet.find(params[:id])
+  end
+
+  def itiran
+    render 'itiran' # ビューをレンダリングする
+  end
+
+  def seisaku
+    send_file(
+      "#{Rails.root}/path/to/要件定義シート.pdf",
+      filename: "要件定義シート.pdf",
+      type: "application/pdf"
+    )
   end
 
   def hokkaido

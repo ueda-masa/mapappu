@@ -13,4 +13,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/itiran', to: 'tweets#itiran', as: 'itiran'
+
+  get '/seisaku', to: 'pages#seisaku', as: 'seisaku'
+
+
+
+
 end

@@ -82,6 +82,14 @@
   opacity: 0.5; 
 }
 
+.map-citye {
+  position: relative;
+  display: block; /* ここを inline-block から block に変更 */
+  width: 100%; 
+  height: auto; 
+  opacity: 0.5; 
+}
+
 
 .map img {
   width: 80vw;
@@ -217,7 +225,11 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
 }
 
 .tweet {
-  margin-bottom: 10vh; /* 各投稿の間隔を調整 */
+  margin-bottom: 20px; /* タイトルと次の投稿の間の間隔を調整 */
+}
+
+.tweet h3 {
+  margin-top: 10px; /* タイトルと画像の間の間隔を調整 */
 }
 
 /******************************************************** 
@@ -242,3 +254,21 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
   opacity: 1; /* 不透明に設定 */
 }
 
+.submit-button, .delete-button {
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover, .delete-button:hover {
+  background-color: #0056b3;
+}
+
+.form-container {
+  display: inline-block; /* フォームを横並びに */
+  text-align: left; /* フォーム内の要素を左寄せに */
+}

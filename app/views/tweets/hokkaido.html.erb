@@ -13,7 +13,7 @@
         <img src="/assets/hottkaido.jpg" alt="Map Image">
       </div>
         <div class="map-overlay">
-          <h1>北海道への投稿</h1>
+          <h1>北海道への投稿</h1> 
           <!-- 投稿フォーム -->
 
           <div class="post-form">
@@ -25,33 +25,32 @@
                 <%= form.text_field :title %>
               </div>
               <div class="form-item">
-                 <%= form.label :image, "画像" %>
+                <%= form.label :image, "画像" %>
                 <%= form.file_field :image %>
               </div>
               <div class="form-item">
                 <%= form.label :introduction, "紹介文" %>
                 <%= form.text_area :introduction %>
               </div>
-                <%= form.submit "投稿" %>
+              <%= form.submit "投稿" %>
             <% end %>
           
-
             <div class="tweets-container">
               <% @tweets.reverse_each do |tweet| %>
                 <div class="tweet">
-                  <h3><%= tweet.title %></h3>
                   <% if tweet.image.attached? %>
                     <div class="posted-image-container">
-                      <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                      <%= link_to edit_tweet_path(tweet) do %>
+                        <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                      <% end %>
+                      <h4><%= tweet.title %></h4>
                     </div>
                   <% end %>
-                  <h3><%= tweet.title %></h3> <!-- 画像の下にタイトルを表示 -->
                 </div>
               <% end %>
             </div>
           </div>
         </div>
-      
     </div>
   </body>
 </html>
