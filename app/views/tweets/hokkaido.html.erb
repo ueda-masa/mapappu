@@ -17,6 +17,7 @@
           <!-- 投稿フォーム -->
 
           <div class="post-form">
+
             <%= form_with(model: Tweet.new, url: hokkaido_tweets_path, local: true) do |form| %>
               <%= form.hidden_field :region, value: "hokkaido" %>
 

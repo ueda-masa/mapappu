@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save
       if params[:tweet][:region] == 'hokkaido'
         redirect_to hokkaido_path, notice: 'Tweet was successfully created.'
@@ -24,6 +24,7 @@ class TweetsController < ApplicationController
     end
   end
 
+  
   def destroy
     @tweet = Tweet.find(params[:id])
     @tweet.destroy
