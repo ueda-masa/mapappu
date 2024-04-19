@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
-
     <div class="map">
       <div class="map-city">
         <img src="/assets/hottkaido.jpg" alt="Map Image">
@@ -15,12 +14,9 @@
         <div class="map-overlay">
           <h1>北海道への投稿</h1> 
           <!-- 投稿フォーム -->
-
           <div class="post-form">
-
             <%= form_with(model: Tweet.new, url: hokkaido_tweets_path, local: true) do |form| %>
               <%= form.hidden_field :region, value: "hokkaido" %>
-
               <div class="form-item">
                 <%= form.label :title, "タイトル" %>
                 <%= form.text_field :title %>
@@ -35,7 +31,6 @@
               </div>
               <%= form.submit "投稿" %>
             <% end %>
-          
             <div class="tweets-container">
               <% @tweets.reverse_each do |tweet| %>
                 <div class="tweet">

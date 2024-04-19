@@ -294,18 +294,20 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
 }
 
 .show-title {
-  font-size: 50px; /* 各投稿の間隔を調整 */
+  font-size: 5vh; /* 各投稿の間隔を調整 */
+  font-weight: bold; /* 太字にする */
 }
 
 .show-image {
-  max-width: 100%; /* 画像の幅を100%に設定 */
-  height: auto; /* 幅に合わせて自動的に高さを調整 */
+  width: 30vw; 
+  height: auto; 
 }
 
 .show-introduction {
-  font-size: 20px; /* 各投稿の間隔を調整 */
+  font-size: 2vh; /* 各投稿の間隔を調整 */
   overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
-  max-height: 20%;
+  max-height: 10vh;
+  white-space: pre-line; /* 改行を維持し、連続する空白文字を折り返す */
 }
 
 
