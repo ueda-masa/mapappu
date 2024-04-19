@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>みんなの旅行情報アプリ - 福岡県</title>
+    <title>みんなの旅行情報アプリ - 福山市</title>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
     <div class="map">
       <div class="map-city">
-        <img src="/assets/fukuoka.jpg" alt="Map Image">
+        <img src="/assets/fukuyama.jpg" alt="Map Image">
       </div>
         <div class="map-overlay">
-          <h1>福岡県への投稿</h1> 
+          <h1>福山市への投稿</h1> 
           <!-- 投稿フォーム -->
           <div class="post-form">
-            <%= form_with(model: Tweet.new, url: fukuoka_tweets_path, local: true) do |form| %>
-              <%= form.hidden_field :region, value: "fukuoka" %>
+            <%= form_with(model: Tweet.new, url: fukuyama_tweets_path, local: true) do |form| %>
+              <%= form.hidden_field :region, value: "fukuyama" %>
               <div class="form-item">
                 <%= form.label :title, "タイトル" %>
                 <%= form.text_field :title %>

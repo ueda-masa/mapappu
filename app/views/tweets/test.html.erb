@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>みんなの旅行情報アプリ - テストページ</title>
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <div class="map">
+      <div class="map-city">
+        <img src="/assets/test.jpg" alt="Map Image">
+      </div>
+      <div class="map-overlay">
+        <h1>テストページへの投稿</h1> 
+        <h2>実際の投稿はタイトルと画像のみです。</h2> 
+        <!-- 投稿フォーム -->
+        <div class="post-form">
+          <%= form_with(model: Tweet.new, url: test_tweets_path, local: true) do |form| %>
+            <%= form.hidden_field :region, value: "test" %>
+            <div class="form-item">
+              <%= form.label :title, "タイトル" %>
+              <%= form.text_field :title %>
+            </div>
+            <div class="form-item">
+              <%= form.label :image, "画像" %>
+              <%= form.file_field :image %>
+            </div>
+            <div class="form-item">
+              <%= form.label :introduction, "紹介文" %>
+              <%= form.text_area :introduction %>
+            </div>
+            <%= form.submit "投稿" %>
+          <% end %>
+          <!-- ツイート表示 -->
+          <div class="tweets-container">
+            <% if @tweets.empty? %>
+              <!-- 投稿がない場合のサンプル画像と紹介文 -->
+              <div class="tweet">
+                <div class="posted-image-container">
+                  <%= image_tag("/assets/testl.jpg", class: "post-image") %>
+                  <h4>ｻﾝﾌﾟﾙ：栃木県の華厳の滝</h4>
+                  <p>紹介文：栃木県の日光東照宮を見るついでに車で行きました。有料展望台にいく時の通路が夏場でも少し寒く感じるくらいで気持ちよく、展望台に行くと若干水滴が霧のように飛んできて気持ちよく自然から直接力をもらえますのでお勧めの観光地です。</p>
+                </div>
+              </div>
+            <% else %>
+              <!-- 投稿された画像と紹介文 -->
+              <% @tweets.reverse_each do |tweet| %>
+                <div class="tweet">
+                  <% if tweet.image.attached? %>
+                    <div class="posted-image-container">
+                      <% if current_user == tweet.user %>
+                        <%= link_to edit_tweet_path(tweet) do %>
+                          <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                        <% end %>
+                      <% else %>
+                        <%= link_to tweet_path(tweet) do %>
+                          <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                        <% end %>
+                      <% end %>
+                      <h4>タイトル： <%= tweet.title %></h4>
+                      <p>紹介文： <%= tweet.introduction %></p>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

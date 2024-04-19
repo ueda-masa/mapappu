@@ -12,10 +12,19 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save
-      if params[:tweet][:region] == 'hokkaido'
+      case params[:tweet][:region]
+      when 'hokkaido'
         redirect_to hokkaido_path, notice: 'Tweet was successfully created.'
-      elsif params[:tweet][:region] == 'tokyo'
+      when 'tokyo'
         redirect_to tokyo_path, notice: 'Tweet was successfully created.'
+      when 'oosaka'
+        redirect_to oosaka_path, notice: 'Tweet was successfully created.'
+      when 'kyoto'
+        redirect_to kyoto_path, notice: 'Tweet was successfully created.'
+      when 'fukuoka'
+        redirect_to fukuoka_path, notice: 'Tweet was successfully created.'
+      when 'hirosima'
+        redirect_to hirosima_path, notice: 'Tweet was successfully created.'
       else
         redirect_to root_path, notice: 'Tweet was successfully created.'
       end
@@ -47,6 +56,38 @@ class TweetsController < ApplicationController
 
   def hokkaido
     @tweets = Tweet.where(region: 'hokkaido')
+  end
+
+  def  totigi
+    @tweets = Tweet.where(region: 'totigi')
+  end
+
+  def tokyo
+    @tweets = Tweet.where(region: 'tokyo')
+  end
+
+  def kyoto
+    @tweets = Tweet.where(region: 'kyoto')
+  end
+
+  def oosaka
+    @tweets = Tweet.where(region: 'oosaka')
+  end
+
+  def fukuyama
+    @tweets = Tweet.where(region: 'fukuyama')
+  end
+
+  def hirosima
+    @tweets = Tweet.where(region: 'hirosima')
+  end
+
+  def fukuoka
+    @tweets = Tweet.where(region: 'fukuoka')
+  end
+
+  def test
+    @tweets = Tweet.where(region: 'test')
   end
 
   private
