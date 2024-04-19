@@ -9,18 +9,34 @@
   <body>
         <!-- ヘッダー -->
     <!-- トップページのメイン -->
-    <div class="map">
-      <img src="/assets/map.PNG" alt="Map Image">
-      <div class="text_hokkaido"><a href="hokkaido.html">北海道</a></div>
-      <div class="text_tokyo"><a href="tokyo.html">東京</a></div>
-      <div class="text_totigi"><a href="totigi.html">栃木</a></div>
-      <div class="text_kyoto"><a href="kyoto.html">京都</a></div>
-      <div class="text_oosaka"><a href="oosaka.html">大阪</a></div>
-      <div class="text_fukuyama"><a href="fukuyama.html">福山</a></div>
-      <div class="text_hirosima"><a href="hirosima.html">広島</a></div>
-      <div class="text_fukuoka"><a href="fukuoka.html">福岡</a></div>
-    </div>
+        <% if user_signed_in? %>
+          <div class="map">
+            <img src="/assets/map.PNG" alt="Map Image">
+            <div class="text_hokkaido"><a href="hokkaido.html">北海道</a></div>
+            <div class="text_tokyo"><a href="tokyo.html">東京</a></div>
+            <div class="text_totigi"><a href="totigi.html">栃木</a></div>
+            <div class="text_kyoto"><a href="kyoto.html">京都</a></div>
+            <div class="text_oosaka"><a href="oosaka.html">大阪</a></div>
+            <div class="text_fukuyama"><a href="fukuyama.html">福山</a></div>
+            <div class="text_hirosima"><a href="hirosima.html">広島</a></div>
+            <div class="text_fukuoka"><a href="fukuoka.html">福岡</a></div>
+          </div>
+        <% else %>
+          <div class="map">
+            <img src="/assets/map.PNG" alt="Map Image">
+            <div class="text_hokkaido"><a href="/">北海道</a></div>
+            <div class="text_tokyo"><a href="/">東京</a></div>
+            <div class="text_totigi"><a href="/">栃木</a></div>
+            <div class="text_kyoto"><a href="/">京都</a></div>
+            <div class="text_oosaka"><a href="/">大阪</a></div>
+            <div class="text_fukuyama"><a href="/">福山</a></div>
+            <div class="text_hirosima"><a href="/">広島</a></div>
+            <div class="text_fukuoka"><a href="/">福岡</a></div>
+          </div>
+        <% end %>
         <!-- フッター -->
   </body>
 </html>
+
+
 
