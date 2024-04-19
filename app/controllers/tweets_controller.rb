@@ -34,6 +34,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   def itiran
     render 'itiran' # ビューをレンダリングする
   end

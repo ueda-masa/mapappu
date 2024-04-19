@@ -187,6 +187,7 @@
 
 }
 
+
 .copyright {
   font-size: 2vw;
   color: #444343;
@@ -281,3 +282,42 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
   display: inline-block; /* フォームを横並びに */
   text-align: left; /* フォーム内の要素を左寄せに */
 }
+
+/******************************************************** 
+　SHOWページのデザイン
+********************************************************/
+.show-all {
+  flex-wrap: wrap; /* 要素が折り返されるようにする */
+  max-height: 80%;
+  margin: 0 auto; /* 水平方向に中央に配置 */
+  transform: translateX(10%); /* 中央に移動 */
+}
+
+.show-title {
+  font-size: 50px; /* 各投稿の間隔を調整 */
+}
+
+.show-image {
+  max-width: 100%; /* 画像の幅を100%に設定 */
+  height: auto; /* 幅に合わせて自動的に高さを調整 */
+}
+
+.show-introduction {
+  font-size: 20px; /* 各投稿の間隔を調整 */
+  overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
+  max-height: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
