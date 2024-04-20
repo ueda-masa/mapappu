@@ -15,16 +15,20 @@ class TweetsController < ApplicationController
       case params[:tweet][:region]
       when 'hokkaido'
         redirect_to hokkaido_path, notice: 'Tweet was successfully created.'
+      when 'totigi'
+        redirect_to totigi_path, notice: 'Tweet was successfully created.'
       when 'tokyo'
         redirect_to tokyo_path, notice: 'Tweet was successfully created.'
       when 'oosaka'
         redirect_to oosaka_path, notice: 'Tweet was successfully created.'
       when 'kyoto'
         redirect_to kyoto_path, notice: 'Tweet was successfully created.'
-      when 'fukuoka'
-        redirect_to fukuoka_path, notice: 'Tweet was successfully created.'
+      when 'fukuyama'
+        redirect_to fukuyama_path, notice: 'Tweet was successfully created.'
       when 'hirosima'
         redirect_to hirosima_path, notice: 'Tweet was successfully created.'
+      when 'fukuoka'
+        redirect_to fukuoka_path, notice: 'Tweet was successfully created.'
       else
         redirect_to root_path, notice: 'Tweet was successfully created.'
       end
@@ -33,11 +37,22 @@ class TweetsController < ApplicationController
     end
   end
 
+  def update
+    @tweet = Tweet.find(params[:id])
+    @region = @tweet.region
+    if @tweet.update(tweet_params)
+      redirect_to "/#{@region}.html", notice: 'ツイートが更新されました。'
+    else
+      render :edit
+    end
+  end
+
   
   def destroy
     @tweet = Tweet.find(params[:id])
+    @region = @tweet.region
     @tweet.destroy
-    redirect_to root_path, notice: 'Tweet was successfully destroyed.'
+    redirect_to "/#{@region}.html", notice: 'ツイートが削除されました。'
   end
 
   def edit
@@ -48,11 +63,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+
   def itiran
-    render 'itiran' # ビューをレンダリングする
+    render 'itiran' 
   end
-
-
 
   def hokkaido
     @tweets = Tweet.where(region: 'hokkaido')
@@ -90,10 +104,12 @@ class TweetsController < ApplicationController
     @tweets = Tweet.where(region: 'test')
   end
 
+
   def explanation
     @tweets = Tweet.where(region: 'explanation')
-    render 'explanation' # 機能説明ページのビューをレンダリングする
+    render 'explanation' 
   end
+
 
   private
 
@@ -105,3 +121,4 @@ class TweetsController < ApplicationController
     @region = params[:region]
   end
 end
+

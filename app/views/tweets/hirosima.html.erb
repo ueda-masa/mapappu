@@ -11,27 +11,37 @@
       <div class="map-city">
         <img src="/assets/hirosima.jpg" alt="Map Image">
       </div>
-        <div class="map-overlay">
-          <h1>広島県への投稿</h1> 
-          <!-- 投稿フォーム -->
-          <div class="post-form">
-            <%= form_with(model: Tweet.new, url: hirosima_tweets_path, local: true) do |form| %>
-              <%= form.hidden_field :region, value: "hirosima" %>
-              <div class="form-item">
-                <%= form.label :title, "タイトル" %>
-                <%= form.text_field :title %>
+      <div class="map-overlay">
+        <h1>広島県への投稿</h1> 
+        <!-- 投稿フォーム -->
+        <div class="post-form">
+          <%= form_with(model: Tweet.new, url: hirosima_tweets_path, local: true) do |form| %>
+            <%= form.hidden_field :region, value: "hirosima" %>
+            <div class="form-item">
+              <%= form.label :title, "タイトル" %>
+              <%= form.text_field :title %>
+            </div>
+            <div class="form-item">
+              <%= form.label :image, "画像" %>
+              <%= form.file_field :image %>
+            </div>
+            <div class="form-item">
+              <%= form.label :introduction, "紹介文" %>
+              <%= form.text_area :introduction %>
+            </div>
+            <%= form.submit "投稿" %>
+          <% end %>
+          <div class="tweets-container">
+            <% if @tweets.empty? %>
+              <!-- サンプル画像と紹介文 -->
+              <div class="tweet">
+                <div class="posted-image-container">
+                  <%= image_tag("/assets/広島_お好み焼き.jpg", class: "post-image") %>
+                  <h4>サンプル：広島県</h4>
+                  <p>広島県といえば、食事はお好み焼きや尾道ラーメンが有名でお好み焼きに関しては外すほうが難しいくらいおいしいです。観光ではカープファンならマツダスタジアムが広島駅から行きやすくなっておりオススメです。</p>
+                </div>
               </div>
-              <div class="form-item">
-                <%= form.label :image, "画像" %>
-                <%= form.file_field :image %>
-              </div>
-              <div class="form-item">
-                <%= form.label :introduction, "紹介文" %>
-                <%= form.text_area :introduction %>
-              </div>
-              <%= form.submit "投稿" %>
-            <% end %>
-            <div class="tweets-container">
+            <% else %>
               <% @tweets.reverse_each do |tweet| %>
                 <div class="tweet">
                   <% if tweet.image.attached? %>
@@ -50,9 +60,10 @@
                   <% end %>
                 </div>
               <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
+      </div>
     </div>
   </body>
 </html>

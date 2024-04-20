@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <%= form_with(model: @tweet, url: tweet_path(@tweet), method: :patch, local: true) do |form| %>
-    <div class="form-container"> <!-- フォーム全体を囲む要素を追加 -->
+    <div class="form-container"> 
       <div class="form-item">
         <%= form.label :title, "タイトル" %>
         <%= form.text_field :title %>
@@ -13,9 +13,8 @@
         <%= form.label :introduction, "紹介文" %>
         <%= form.text_area :introduction %>
       </div>
-      <%= form.submit "更新", class: "submit-button" %>
-      <%= button_to "削除", tweet_path(@tweet), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "submit-button delete-button" %>
+      <%= button_to '更新', tweet_path(@tweet), method: :patch, class: "submit-button", remote: true %>
+      <%= button_to '削除', tweet_path(@tweet), method: :delete, data: { turbo_method: :delete }, class: "submit-button delete-button" %>
     </div>
   <% end %>
 </div>
-

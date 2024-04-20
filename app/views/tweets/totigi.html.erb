@@ -32,23 +32,34 @@
               <%= form.submit "投稿" %>
             <% end %>
             <div class="tweets-container">
-              <% @tweets.reverse_each do |tweet| %>
+              <% if @tweets.empty? %>
+                <!-- サンプル画像と紹介文 -->
                 <div class="tweet">
-                  <% if tweet.image.attached? %>
-                    <div class="posted-image-container">
-                      <% if current_user == tweet.user %>
-                        <%= link_to edit_tweet_path(tweet) do %>
-                          <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
-                        <% end %>
-                      <% else %>
-                        <%= link_to tweet_path(tweet) do %>
-                          <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
-                        <% end %>
-                      <% end %>
-                      <h4><%= tweet.title %></h4>
-                    </div>
-                  <% end %>
+                  <div class="posted-image-container">
+                    <%= image_tag("/assets/testl.jpg", class: "post-image") %>
+                    <h4>ｻﾝﾌﾟﾙ：栃木県の華厳の滝</h4>
+                    <p>紹介文：栃木県の日光東照宮を見るついでに車で行きました。有料展望台にいく時の通路が夏場でも少し寒く感じるくらいで気持ちよく、展望台に行くと若干水滴が霧のように飛んできて気持ちよく自然から直接力をもらる感覚があり、お勧めの観光地です。</p>
+                  </div>
                 </div>
+              <% else %>
+                <% @tweets.reverse_each do |tweet| %>
+                  <div class="tweet">
+                    <% if tweet.image.attached? %>
+                      <div class="posted-image-container">
+                        <% if current_user == tweet.user %>
+                          <%= link_to edit_tweet_path(tweet) do %>
+                            <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                          <% end %>
+                        <% else %>
+                          <%= link_to tweet_path(tweet) do %>
+                            <%= image_tag rails_blob_path(tweet.image, only_path: true), class: "post-image" %>
+                          <% end %>
+                        <% end %>
+                      <h4><%= tweet.title %></h4>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
             </div>
           </div>

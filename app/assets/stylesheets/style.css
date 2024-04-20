@@ -28,7 +28,7 @@
   font-size: 2.5vw;
   text-decoration: underline;
   padding-left: 2vw; 
-  font-weight: bold; /* 太字にする */
+  font-weight: bold; 
 }
 
 .nav-lists {
@@ -38,7 +38,7 @@
 }
 
 .nav-lists__list {
-  margin-left: 2vw; /* 余白を固定値に変更 */
+  margin-left: 2vw; 
   font-size:  1.5vw;
   font-weight: 600;
   line-height: 100px;  
@@ -50,7 +50,7 @@
 }
 
 .post {
-  margin-left: 2vw; /* ボタン間の余白を調整 */
+  margin-left: 2vw; 
 }
 
 /******************************************************** 
@@ -65,9 +65,9 @@
 
 .map-overlay {
   position: absolute;
-  top: 50%; /* 画像の中央にオーバーレイを配置 */
-  left: 50%; /* 画像の中央にオーバーレイを配置 */
-  transform: translate(-70%, -50%); /* オーバーレイを中央に配置 */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-70%, -50%); 
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   text-align: center;
@@ -217,8 +217,8 @@
 }
 
 .tutoriala img {
-  width: 40vw; /* 最大幅を100%に設定 */
-  height: 52vh; /* 高さを自動に設定 */
+  width: 40vw; 
+  height: 52vh; 
 }
 
 .tutorialb {
@@ -234,8 +234,8 @@
 }
 
 .tutorialb img {
-  width: 40vw; /* 最大幅を100%に設定 */
-  height: 52vh; /* 高さを自動に設定 */
+  width: 40vw; 
+  height: 52vh; 
 }
 
 .tutorialc {
@@ -251,8 +251,8 @@
 }
 
 .tutorialc img {
-  width: 40vw; /* 最大幅を100%に設定 */
-  height: 52vh; /* 高さを自動に設定 */
+  width: 40vw; 
+  height: 52vh; 
 }
 
 .tutoriald {
@@ -268,8 +268,8 @@
 }
 
 .tutoriald img {
-  width: 40vw; /* 最大幅を100%に設定 */
-  height: 52vh; /* 高さを自動に設定 */
+  width: 40vw; 
+  height: 52vh; 
 }
 
 .tutoriale {
@@ -285,8 +285,8 @@
 }
 
 .tutoriale img {
-  width: 40vw; /* 最大幅を100%に設定 */
-  height: 52vh; /* 高さを自動に設定 */
+  width: 40vw; 
+  height: 52vh; 
 }
 
 .tutorialf {
@@ -331,66 +331,64 @@
 
 .post-form {
   display: flex;
-  flex-wrap: wrap; /* 要素が折り返されるようにする */
-  width: 50vw; /* 投稿フォームの幅を固定 */
-  margin: 0 auto; /* 水平方向に中央に配置 */
-  height: 45vh; /* フォームの高さを設定 */
-  overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
+  flex-wrap: wrap; 
+  width: 50vw; 
+  margin: 0 auto; 
+  height: 45vh; 
+  overflow-y: auto; 
   max-height: 80%;
 }
 
 .post-form .title {
-  font-size: 30px; /* 各投稿の間隔を調整 */
+  font-size: 30px; 
 }
 
 .post-form .tweet {
-  margin-bottom: 30px; /* 各投稿の間隔を調整 */
+  margin-bottom: 30px; 
 }
 
 .post-form .submit-button {
-  position: absolute; /* 投稿ボタンの位置を絶対位置に設定 */
-  bottom: 30px; /* 下側からの位置を調整 */
+  position: absolute; 
+  bottom: 30px; 
 }
 
-div.tweet .post-image {  /* 投稿した画像のサイズ */
+div.tweet .post-image {  
   width: 40vw; 
   height: auto; 
 }
 
 .tweets-container {
   display: flex;
-  flex-direction: column-reverse; /* フレックスボックスを逆に配置 */
-  align-items: center; /* 中央揃え */
 }
 
 .tweet {
-  margin-bottom: 20px; /* タイトルと次の投稿の間の間隔を調整 */
+  margin-bottom: 20px; 
 }
 
 .tweet h3 {
-  margin-top: 10px; /* タイトルと画像の間の間隔を調整 */
+  margin-top: 10px; 
 }
 
 /******************************************************** 
 　投稿画像のサイズ
 ********************************************************/
 .post-image {
-  max-width: 100%; /* 画像の幅を100%に設定 */
-  height: auto; /* 幅に合わせて自動的に高さを調整 */
+  max-width: 100%;
+  height: auto; 
 }
 
 .form-item {
-  width: calc(33.333% - 20px); /* 幅を計算して設定し、20px は間隔を考慮した余白 */
-  margin-bottom: 10px; /* 各項目の下に余白を追加 */
-  text-align: left; /* 左寄せに設定 */
+  width: calc(33.333% - 20px); 
+  margin-bottom: 10px; 
+  text-align: left; 
 }
 
 .form-item label {
-  margin: 0; /* ラベルのデフォルトのマージンを除去 */
+  margin: 0; 
 }
 
 .posted-image-container {
-  opacity: 1; /* 不透明に設定 */
+  opacity: 1; 
 }
 
 .submit-button, .delete-button {
@@ -408,23 +406,23 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
 }
 
 .form-container {
-  display: inline-block; /* フォームを横並びに */
-  text-align: left; /* フォーム内の要素を左寄せに */
+  display: inline-block; 
+  text-align: left; 
 }
 
 /******************************************************** 
 　SHOWページのデザイン
 ********************************************************/
 .show-all {
-  flex-wrap: wrap; /* 要素が折り返されるようにする */
+  flex-wrap: wrap; 
   max-height: 80%;
-  margin: 0 auto; /* 水平方向に中央に配置 */
-  transform: translateX(10%); /* 中央に移動 */
+  margin: 0 auto; 
+  transform: translateX(10%); 
 }
 
 .show-title {
-  font-size: 5vh; /* 各投稿の間隔を調整 */
-  font-weight: bold; /* 太字にする */
+  font-size: 5vh; 
+  font-weight: bold; 
 }
 
 .show-image {
@@ -433,22 +431,10 @@ div.tweet .post-image {  /* 投稿した画像のサイズ */
 }
 
 .show-introduction {
-  font-size: 2vh; /* 各投稿の間隔を調整 */
-  overflow-y: auto; /* コンテンツが高さを超えた場合にスクロールバーを表示 */
+  font-size: 2vh; 
+  overflow-y: auto; 
   max-height: 10vh;
-  white-space: pre-line; /* 改行を維持し、連続する空白文字を折り返す */
+  white-space: pre-line; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

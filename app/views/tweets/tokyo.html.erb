@@ -11,27 +11,37 @@
       <div class="map-city">
         <img src="/assets/tokyo.jpg" alt="Map Image">
       </div>
-        <div class="map-overlay">
-          <h1>東京都への投稿</h1> 
-          <!-- 投稿フォーム -->
-          <div class="post-form">
-            <%= form_with(model: Tweet.new, url: tokyo_tweets_path, local: true) do |form| %>
-              <%= form.hidden_field :region, value: "tokyo" %>
-              <div class="form-item">
-                <%= form.label :title, "タイトル" %>
-                <%= form.text_field :title %>
+      <div class="map-overlay">
+        <h1>東京都への投稿</h1> 
+        <!-- 投稿フォーム -->
+        <div class="post-form">
+          <%= form_with(model: Tweet.new, url: tokyo_tweets_path, local: true) do |form| %>
+            <%= form.hidden_field :region, value: "tokyo" %>
+            <div class="form-item">
+              <%= form.label :title, "タイトル" %>
+              <%= form.text_field :title %>
+            </div>
+            <div class="form-item">
+              <%= form.label :image, "画像" %>
+              <%= form.file_field :image %>
+            </div>
+            <div class="form-item">
+              <%= form.label :introduction, "紹介文" %>
+              <%= form.text_area :introduction %>
+            </div>
+            <%= form.submit "投稿" %>
+          <% end %>
+          <div class="tweets-container">
+            <% if @tweets.empty? %>
+              <!-- サンプル画像と紹介文 -->
+              <div class="tweet">
+                <div class="posted-image-container">
+                  <%= image_tag("/assets/東京_東京駅.jpg", class: "post-image") %>
+                  <h4>サンプル：東京都</h4>
+                  <p>東京といえば観光地は、東京スカイツリーや東京駅、歌舞伎座や浅草ととにかく観光する場所に困らない地域です。感覚的にはないものがわからないくらいには食事は揃っていますので他の地域から来た際に食べ比べもオススメです。</p>
+                </div>
               </div>
-              <div class="form-item">
-                <%= form.label :image, "画像" %>
-                <%= form.file_field :image %>
-              </div>
-              <div class="form-item">
-                <%= form.label :introduction, "紹介文" %>
-                <%= form.text_area :introduction %>
-              </div>
-              <%= form.submit "投稿" %>
-            <% end %>
-            <div class="tweets-container">
+            <% else %>
               <% @tweets.reverse_each do |tweet| %>
                 <div class="tweet">
                   <% if tweet.image.attached? %>
@@ -50,10 +60,10 @@
                   <% end %>
                 </div>
               <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
+      </div>
     </div>
   </body>
 </html>
-
