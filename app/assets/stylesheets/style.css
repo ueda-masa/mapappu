@@ -8,7 +8,6 @@
   align-items: center;
   width: 80vw;
   height: 10vh;
-
   background-color: #DBDBDB;
   margin-left: 0;
   margin-right: 0;
@@ -92,12 +91,12 @@
   opacity: 0.5; 
 }
 
-.map-citye {
+.map-city-e {
   position: relative;
-  display: block; /* ここを inline-block から block に変更 */
-  width: 100%; 
-  height: auto; 
-  opacity: 0.5; 
+  display: inline-block;
+  width: 80%; 
+  height: 100000wh; 
+  opacity: 0; /* 完全に透明にする 保留中、追加要素*/
 }
 
 
@@ -186,6 +185,110 @@
   font-size: 2.5vw;
 }
 
+
+.text_page {
+  position: absolute;
+  top: 25%;  
+  left: 20%; 
+  color: #ffffff;
+  background-color: rgb(240, 237, 237);
+  font-size: 3vw;
+}
+
+.text_word {
+  position: absolute;
+  top: 13%;  
+  left: 20%; 
+  color: #111111;
+  background-color: rgb(240, 237, 237);
+  font-size: 3vw;
+}
+
+.tutoriala {
+  position: absolute;
+  top: 40%;  
+  left: 5%; 
+  color: #111111;
+  font-size: 2.5vw;
+}
+
+.tutoriala_text {
+  background-color: rgb(240, 237, 237);
+}
+
+.tutoriala img {
+  width: 40vw; /* 最大幅を100%に設定 */
+  height: 52vh; /* 高さを自動に設定 */
+}
+
+.tutorialb {
+  position: absolute;
+  top: 110%;  
+  left: 5%; 
+  color: #111111;
+  font-size: 2.5vw;
+}
+
+.tutorialab_text {
+  background-color: rgb(240, 237, 237);
+}
+
+.tutorialb img {
+  width: 40vw; /* 最大幅を100%に設定 */
+  height: 52vh; /* 高さを自動に設定 */
+}
+
+.tutorialc {
+  position: absolute;
+  top: 180%;  
+  left: 5%; 
+  color: #111111;
+  font-size: 3vw;
+}
+
+.tutorialac_text {
+  background-color: rgb(240, 237, 237);
+}
+
+.tutorialc img {
+  width: 40vw; /* 最大幅を100%に設定 */
+  height: 52vh; /* 高さを自動に設定 */
+}
+
+.tutoriald {
+  position: absolute;
+  top: 250%;  
+  left: 5%; 
+  color: #111111;
+  font-size: 3vw;
+}
+
+.tutorialad_text {
+  background-color: rgb(240, 237, 237);
+}
+
+.tutoriald img {
+  width: 40vw; /* 最大幅を100%に設定 */
+  height: 52vh; /* 高さを自動に設定 */
+}
+
+.tutoriale {
+  position: absolute;
+  top: 320%;  
+  left: 5%; 
+  color: #111111;
+  font-size: 3vw;
+}
+
+.tutorialae_text {
+  background-color: rgb(240, 237, 237);
+}
+
+.tutoriale img {
+  width: 40vw; /* 最大幅を100%に設定 */
+  height: 52vh; /* 高さを自動に設定 */
+}
+
 /******************************************************** 
 　フッター
 ********************************************************/
@@ -204,7 +307,10 @@
   color: #444343;
 }
 
-
+/* 特定のページ専用のスタイルシート　操作説明ページのみフッターを無効化した */
+.page-specific-styles .footer {
+  display: none;
+}
 
 
 /******************************************************** 

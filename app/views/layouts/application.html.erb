@@ -25,6 +25,7 @@
           </div>
         <% else %>
           <div class="grid-6">
+            <div class="nav-lists__list"><%= link_to "操作説明", explanation_path %></div>
             <div class="nav-lists__list"><%= link_to "新規登録", new_user_registration_path %></div>
             <div class="nav-lists__list"><%= link_to "ログイン", new_user_session_path %></div>
           </div>

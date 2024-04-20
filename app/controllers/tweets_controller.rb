@@ -90,6 +90,11 @@ class TweetsController < ApplicationController
     @tweets = Tweet.where(region: 'test')
   end
 
+  def explanation
+    @tweets = Tweet.where(region: 'explanation')
+    render 'explanation' # 機能説明ページのビューをレンダリングする
+  end
+
   private
 
   def tweet_params
