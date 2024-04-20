@@ -24,15 +24,14 @@
         <% else %>
           <div class="map">
             <img src="/assets/map.PNG" alt="Map Image">
-            <div class="text_hokkaido"><a href="/">北海道</a></div>
-            <div class="text_tokyo"><a href="/">東京</a></div>
-            <div class="text_totigi"><a href="/">栃木</a></div>
-            <div class="text_kyoto"><a href="/">京都</a></div>
-            <div class="text_oosaka"><a href="/">大阪</a></div>
-            <div class="text_fukuyama"><a href="/">福山</a></div>
-            <div class="text_hirosima"><a href="/">広島</a></div>
-            <div class="text_fukuoka"><a href="/">福岡</a></div>
-            <div class="text_test"><a href="test.html">テストページ</a></div>
+            <div class="text_hokkaido"><a href="<%= new_user_session_path %>">北海道</a></div>
+            <div class="text_tokyo"><a href="<%= new_user_session_path %>">東京</a></div>
+            <div class="text_totigi"><a href="<%= new_user_session_path %>">栃木</a></div>
+            <div class="text_kyoto"><a href="<%= new_user_session_path %>">京都</a></div>
+            <div class="text_oosaka"><a href="<%= new_user_session_path %>">大阪</a></div>
+            <div class="text_fukuyama"><a href="<%= new_user_session_path %>">福山</a></div>
+            <div class="text_hirosima"><a href="<%= new_user_session_path %>">広島</a></div>
+            <div class="text_fukuoka"><a href="<%= new_user_session_path %>">福岡</a></div>
           </div>
         <% end %>
         <!-- フッター -->
