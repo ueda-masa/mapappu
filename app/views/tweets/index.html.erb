@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>  みんなの旅行情報アプリ</title>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
         <!-- ヘッダー -->
     <!-- トップページのメイン -->
         <% if user_signed_in? %>
           <div class="map">
-            <img src="/assets/map.PNG" alt="Map Image">
+            <%= image_tag("map.PNG", alt: "Map Image") %>
             <div class="text_hokkaido"><a href="hokkaido.html">北海道</a></div>
             <div class="text_tokyo"><a href="tokyo.html">東京</a></div>
             <div class="text_totigi"><a href="totigi.html">栃木</a></div>
@@ -23,7 +22,7 @@
           </div>
         <% else %>
           <div class="map">
-            <img src="/assets/map.PNG" alt="Map Image">
+            <%= image_tag("map.PNG", alt: "Map Image") %>
             <div class="text_hokkaido"><a href="<%= new_user_session_path %>">北海道</a></div>
             <div class="text_tokyo"><a href="<%= new_user_session_path %>">東京</a></div>
             <div class="text_totigi"><a href="<%= new_user_session_path %>">栃木</a></div>
