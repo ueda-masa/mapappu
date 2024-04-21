@@ -5,6 +5,7 @@ class Tweet < ApplicationRecord
 
   validates :title, presence: true
   validates :introduction, presence: true
+  validates :user_id, presence: true
 
   attribute :title, :string
   attribute :introduction, :text
