@@ -31,9 +31,7 @@ Rails.application.routes.draw do
   get '/test', to: 'tweets#test', as: 'test_tweets' # 福岡の投稿ページ
   post '/test', to: 'tweets#create' # 投稿フォームからのPOSTリクエスト
 
-  # アセットへのルーティングを追加
-  get '/assets/map.PNG', to: redirect('/path/to/your/map.PNG')
-  get '/assets/style.css', to: redirect('/path/to/your/style.css')
+
 
   # 他のルート定義
 
