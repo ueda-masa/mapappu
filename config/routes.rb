@@ -31,15 +31,16 @@ Rails.application.routes.draw do
   get '/test', to: 'tweets#test', as: 'test_tweets' # 福岡の投稿ページ
   post '/test', to: 'tweets#create' # 投稿フォームからのPOSTリクエスト
 
+  # アセットへのルーティングを追加
+  get '/assets/map.PNG', to: redirect('/path/to/your/map.PNG')
+  get '/assets/style.css', to: redirect('/path/to/your/style.css')
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # 他のルート定義
 
   # Defines the root path route ("/")
   # root "articles#index"
   get '/itiran', to: 'tweets#itiran', as: 'itiran'
 
   get '/explanation', to: 'tweets#explanation', as: 'explanation'
-
-
 
 end
