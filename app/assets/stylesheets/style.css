@@ -330,7 +330,7 @@
 ********************************************************/
 
 .post-form {
-  display: flex;
+  
   flex-wrap: wrap; 
   width: 50vw; 
   margin: 0 auto; 
@@ -342,6 +342,7 @@
 .post-form .title {
   font-size: 30px; 
 }
+
 
 .post-form .tweet {
   margin-bottom: 30px; 
@@ -357,13 +358,12 @@ div.tweet .post-image {
   height: auto; 
 }
 
-.tweets-container {
-  display: flex;
-}
 
 .tweet {
   margin-bottom: 20px; 
+  display: block;
 }
+
 
 .tweet h3 {
   margin-top: 10px; 
@@ -382,6 +382,19 @@ div.tweet .post-image {
   margin-bottom: 10px; 
   text-align: left; 
 }
+
+.form-item input[type="text"],
+.form-item textarea {
+  border: 1px solid black; 
+  padding: 5px; 
+  margin-bottom: 10px; 
+  width: 250%; 
+}
+
+.form-item input[type="file"] {
+  margin-bottom: 10px; 
+}
+
 
 .form-item label {
   margin: 0; 
@@ -410,6 +423,8 @@ div.tweet .post-image {
   text-align: left; 
 }
 
+
+
 /******************************************************** 
 　SHOWページのデザイン
 ********************************************************/
@@ -437,3 +452,16 @@ div.tweet .post-image {
   white-space: pre-line; 
 }
 
+
+
+.input-field {
+  border: 0.1vw solid black;
+  padding: 1px;
+  margin-bottom: 10px;
+}
+
+.registration-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}

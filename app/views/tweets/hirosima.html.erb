@@ -28,7 +28,7 @@
               <%= form.label :introduction, "紹介文" %>
               <%= form.text_area :introduction %>
             </div>
-            <%= form.submit "投稿" %>
+            <%= form.submit "投稿", style: "border: 1px solid black; padding: 5px; margin-bottom: 10px;" %>
           <% end %>
           <div class="tweets-container">
             <% if @tweets.empty? %>
