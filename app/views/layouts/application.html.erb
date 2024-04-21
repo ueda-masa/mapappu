@@ -21,7 +21,7 @@
           <div class="user_nav grid-6">
              <div class="nav-lists__list"><%= current_user.nickname %></div>
             <div class="nav-lists__list"><%= link_to "都道府県一覧", itiran_path %></div>
-            <div class="nav-lists__list"><a href="/assets/要件定義シート.pdf" target="_blank">制作工程</a></div>
+            <div class="nav-lists__list"><%= link_to "制作工程", asset_path('要件定義シート.pdf'), target: "_blank" %></div>
             <div class="nav-lists__list"><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></div>
           </div>
         <% else %>
