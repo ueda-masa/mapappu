@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>みんなの旅行情報アプリ - 東京都</title>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="map">
       <div class="map-city">
-        <img src="/assets/tokyo.jpg" alt="Map Image">
+        <%= image_tag("tokyo.jpg", alt: "Map Image") %>
       </div>
       <div class="map-overlay">
         <h1>東京都への投稿</h1> 

@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>みんなの旅行情報アプリ - 栃木県</title>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="map">
       <div class="map-city">
-        <img src="/assets/totigi.jpg" alt="Map Image">
+        <%= image_tag("totigi.jpg", alt: "Map Image") %>
       </div>
         <div class="map-overlay">
           <h1>栃木県への投稿</h1> 
